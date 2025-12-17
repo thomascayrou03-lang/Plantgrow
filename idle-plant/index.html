@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Idle Plant 🌱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header id="topBar">
+  <button>☰</button>
+  <h1>Idle Plant</h1>
+  <button>🛒</button>
+</header>
+
+<div id="garden" class="garden"></div>
+
+<main>
+  <div id="potsArea"></div>
+</main>
+
+<div id="garden"></div>
+
+<footer id="actions">
+  <button class="action green" onclick="plantSeed()">
+    <img src="img/seeds.png">
+  </button>
+
+  <button class="action blue" onclick="waterPlant()">
+    <img src="img/water.png">
+  </button>
+
+  <button class="action red" onclick="deletePlant()">
+    <img src="img/delete.png">
+  </button>
+</footer>
+
+<div id="plantPanel">
+  <h2>🌱 Plante</h2>
+  <p>Taille : <span id="pHeight">0</span> cm</p>
+  <p>Eau : <span id="pWater">0</span></p>
+  <button onclick="closePanel()">Fermer</button>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

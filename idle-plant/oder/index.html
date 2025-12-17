@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Oder - Idle Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header id="topBar">
+    <h1>Oder 🌱</h1>
+    <div id="coins">Coins: <span id="coinCount">0</span></div>
+  </header>
+
+  <div id="garden"></div>
+
+  <div id="shop">
+    <h2>🛒 Shop</h2>
+    <div class="shop-item" id="buyPot">
+      <img src="../img/pot1.png" alt="Pot">
+      <p>Acheter Pot (50 coins)</p>
+      <button onclick="buyPot()">Acheter</button>
+    </div>
+    <div class="shop-item" id="buyUpgrade">
+      <img src="../img/stage a2.png" alt="Upgrade">
+      <p>Amélioration (100 coins)</p>
+      <button onclick="buyUpgrade()">Acheter</button>
+    </div>
+  </div>
+
+  <footer id="actions">
+    <button class="action green" onclick="plantSeed()">
+      <img src="../img/seeds.png" alt="Planter">
+    </button>
+
+    <button class="action blue" onclick="waterPlants()">
+      <img src="../img/water.png" alt="Arroser">
+    </button>
+
+    <button class="action yellow" onclick="harvestAll()">
+      <img src="../img/stage a4.png" alt="Récolter">
+    </button>
+  </footer>
+
+  <div id="plantPanel">
+    <h2>🌱 Plante</h2>
+    <p>Taille : <span id="pHeight">0</span> cm</p>
+    <p>Eau : <span id="pWater">0</span></p>
+    <p>Production : <span id="pProduction">0</span> coins/sec</p>
+    <button onclick="closePanel()">Fermer</button>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

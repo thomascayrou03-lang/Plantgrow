@@ -1,0 +1,216 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #87CEEB, #98FB98);
+  min-height: 100vh;
+}
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: #2E8B57;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#garden {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pot-slot {
+  position: relative;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.pot-img {
+  width: 100px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.plant-img {
+  width: 80px;
+  position: absolute;
+  bottom: 70px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.plant-img:hover {
+  transform: scale(1.1);
+}
+
+.plant-btn {
+  position: absolute;
+  bottom: 90px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+#shop {
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.shop-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.shop-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.shop-item button {
+  margin-left: auto;
+  background: #FFA500;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.shop-item button:hover {
+  background: #FF8C00;
+}
+
+#actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background: #f0f0f0;
+  position: sticky;
+  bottom: 0;
+}
+
+.action {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.action:hover {
+  transform: scale(1.1);
+}
+
+.action img {
+  width: 40px;
+  height: 40px;
+}
+
+.green { background: #4CAF50; }
+.blue { background: #2196F3; }
+.yellow { background: #FFC107; }
+
+#plantPanel {
+  position: fixed;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: white;
+  transition: 0.4s;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+#plantPanel.open {
+  bottom: 0;
+}
+
+#plantPanel h2 {
+  margin-top: 0;
+  color: #2E8B57;
+}
+
+#plantPanel p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#plantPanel button {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+}
+
+.locked {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 100%;
+  background: #4CAF50;
+  width: 0%;
+  transition: width 0.3s;
+}
+
+@media (max-width: 600px) {
+  #garden {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  #actions {
+    gap: 10px;
+  }
+  
+  .action {
+    width: 60px;
+    height: 60px;
+  }
+}

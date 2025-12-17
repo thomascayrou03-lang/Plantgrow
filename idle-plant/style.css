@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#87ceeb, #d2b48c);
+}
+
+#topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+}
+
+#potsArea {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding: 20px;
+}
+
+.pot {
+  height: 140px;
+  background: #6d4c41;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.pot.locked {
+  background: #333;
+  opacity: 0.4;
+}
+
+#actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  background: #eee;
+}
+
+.action {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+}
+
+.green { background: #4caf50; }
+.blue { background: #2196f3; }
+.red { background: #f44336; }
+
+.action img {
+  width: 30px;
+}
+
+#plantPanel {
+  position: fixed;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: white;
+  transition: 0.4s;
+  padding: 20px;
+}
+
+#plantPanel.open {
+  bottom: 0;
+}
+
+.pot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pot {
+  position: relative;
+  width: 120px;
+  height: 160px;
+}
+
+.pot-img {
+  position: absolute;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+}
+
+.plant-img {
+  position: absolute;
+  bottom: 90px;
+  width: 80px;
+  z-index: 3;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pot-slot {
+  position: relative;
+  width: 120px;
+  height: 220px;
+  margin: 50px auto;
+  background: rgba(255,0,0,0.1); 
+}
+
+.pot-slot .pot {
+  width: 120px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.pot-slot .plant {
+  width: 100px;
+  position: absolute;
+  bottom: 80px; /* ← posé sur le pot */
+  left: 10px;
+}
+
+.pot-wrapper {
+  position: relative;
+  width: 120px;
+  height: 200px;
+}
+
+.pot-wrapper img {
+  display: block;
+  margin: auto;
+}
+
+.plant-img {
+  position: absolute;
+  bottom: 60px; /* ← colle la plante au pot */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+}
+
+/* 🌿 JARDIN */
+#garden {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* 🪴 POT / EMPLACEMENT */
+.pot-slot {
+  position: relative;
+  width: 110px;
+  height: 160px;
+}
+
+/* image pot ou emplacement */
+.pot-slot img.pot,
+.pot-slot img.slot {
+  width: 110px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* 🌱 PLANTE */
+.pot-slot img.plant {
+  width: 80px;
+  position: absolute;
+  bottom: 45px; /* posé SUR le pot */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+/* BOUTONS */
+button {
+  margin: 6px;
+  padding: 10px;
+  font-size: 10px;
+}
+
+
